@@ -9,8 +9,6 @@ class Neuron():
     weights: np.ndarray[np.float64] = None
     bias: float = np.random.uniform(0, 1, size=1)
     error: float = 0
-    delta: np.ndarray = np.array([])
-    delta_weights: np.ndarray = np.array([])
     weights_gradient = 0
     bias_gradient = 0
     z: float = None
