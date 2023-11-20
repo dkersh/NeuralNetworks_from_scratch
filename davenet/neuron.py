@@ -37,9 +37,9 @@ class Neuron():
 
         return self.error
     
-    def update_weights(self, lr=0.05):
-        self.weights -= (np.squeeze(self.weights_gradient) * lr)
-        self.bias -= (self.bias_gradient * lr)
+    def update_weights(self, lr=0.05, batch_size = 1):
+        self.weights -= (np.squeeze(self.weights_gradient) * lr/batch_size)
+        self.bias -= (self.bias_gradient * lr/batch_size)
 
         self.weights_gradient = 0
         self.bias_gradient = 0

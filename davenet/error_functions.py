@@ -16,7 +16,7 @@ class MeanSquaredError(ErrorFunction):
     name: str = 'MSE'
 
     def function(self, a, y):
-        return 0.5*(y - a)**2
+        return 0.5*np.sum((y - a))**2
     
     def derivative(self, a, y):
         return (a - y)

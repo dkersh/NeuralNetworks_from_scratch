@@ -76,9 +76,9 @@ class Layer():
         for n, delta in zip(self.neurons, error_term): 
             n.backward(delta)
 
-    def update_weights(self, lr=0.05):
+    def update_weights(self, lr=0.05, batch_size=1):
         for n in self.neurons:
-            n.update_weights(lr)
+            n.update_weights(lr, batch_size)
 
 def compute_error_term(layer, layerp1):
     error = np.zeros(len(layer.neurons))
